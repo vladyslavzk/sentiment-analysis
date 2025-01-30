@@ -12,22 +12,22 @@ private:
     unordered_set<string> stopwords;
     unordered_map<string, int> wordCountPositive;
     unordered_map<string, int> wordCountNegative;
-    unordered_map<string, int> wordCountNeutral;
     unordered_map<string, int> totalWordCount;
     unordered_set<string> vocabulary;
 
+    int totalPositiveWords;
+    int totalNegativeWords;
+
     double log_prior_positive;
     double log_prior_negative;
-    double log_prior_neutral;
 
     std::unordered_map<std::string, double> log_likelihood_positive;
     std::unordered_map<std::string, double> log_likelihood_negative;
-    std::unordered_map<std::string, double> log_likelihood_neutral;
 
     void calculateWordCounts(Dataset &train);
 
     unordered_map<string, double>
-    calculateLikelihood(unordered_map<string, int> wordCount, double laplacian_smoothing = 1.0);
+    calculateLikelihood(unordered_map<string, int> wordCount, int totalWords, double laplacian_smoothing = 1.0);
 
     static unordered_map<string, double> calculateLogLikelihood(unordered_map<string, double> likelihood);
 

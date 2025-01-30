@@ -6,6 +6,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <unordered_map>
 
 
 class Dataset {
@@ -13,9 +14,10 @@ private:
     vector<DSText> data;
 
 public:
-    void addTokens(vector<string> tokens, int label);
-
     vector<DSText> &getData();
+    void addTokens(vector<string> tokens, int label);
+    std::unordered_map<std::string, int> createVocabulary();
+
 };
 
 

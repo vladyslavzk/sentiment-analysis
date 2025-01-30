@@ -1,7 +1,3 @@
-//
-// Created by Vlad on 6/24/2024.
-//
-
 #ifndef SENTIMENTANALYSIS_TWITTER_H
 #define SENTIMENTANALYSIS_TWITTER_H
 
@@ -20,22 +16,16 @@ private:
     Dataset train;
     Dataset dev;
     unordered_set<string> stopwords;
-
+    void loadData(const string &filename, Dataset &dataset, int n_sentences=-1);
 
 public:
     void loadStopwords(string filename);
-
-    void loadData(const string &filename, Dataset &dataset);
-
-    void loadTrainData(string filename);
-
-    void loadDevData(string filename);
+    void loadTrainData(string filename, int n_sentences=-1);
+    void loadDevData(string filename, int n_sentences=-1);
 
 
     Dataset &getTrainData();
-
     Dataset &getDevData();
-
 };
 
 #endif //SENTIMENTANALYSIS_TWITTER_H

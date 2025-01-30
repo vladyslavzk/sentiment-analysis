@@ -1,7 +1,3 @@
-//
-// Created by Vlad on 6/24/2024.
-//
-
 #ifndef SENTIMENTANALYSIS_DSTEXT_H
 #define SENTIMENTANALYSIS_DSTEXT_H
 
@@ -17,7 +13,7 @@ using namespace std;
 class DSText {
 private:
     vector<string> tokens;
-    int label; // 0 - positive, 1 - negative, 2 - neutral
+    int label; // 0 - negative, 1 - positive
 
 public:
     DSText(vector<string> &txt, int lbl) : tokens(txt), label(lbl) {}
